@@ -18,8 +18,8 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@library/common": ["libs/common/src"],
-      "@library/common/*": ["libs/common/src/*"]
+      "@libs/common": ["libs/common/src"],
+      "@libs/common/*": ["libs/common/src/*"]
     }
   }
 }
