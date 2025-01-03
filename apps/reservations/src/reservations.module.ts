@@ -1,5 +1,9 @@
-import { DatabaseModule } from '@libs/common';
+import { DatabaseModule, LoggerModule } from '@libs/common';
 import { Module, Provider } from '@nestjs/common';
+import {
+  ReservationDocument,
+  ReservationSchema,
+} from './models/reservation.schema';
 import { ReservationsController } from './reservations.controller';
 import {
   RESERVATIONS_REPOSITORY,
@@ -7,10 +11,6 @@ import {
 } from './reservations.di-tokens';
 import { ReservationsRepository } from './reservations.repository';
 import { ReservationsService } from './reservations.service';
-import {
-  ReservationDocument,
-  ReservationSchema,
-} from './models/reservation.schema';
 
 const dependencies: Provider[] = [
   {
@@ -32,6 +32,7 @@ const dependencies: Provider[] = [
         schema: ReservationSchema,
       },
     ]),
+    LoggerModule,
   ],
   controllers: [ReservationsController],
   providers: [...dependencies],
